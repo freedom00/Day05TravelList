@@ -1,0 +1,39 @@
+﻿<Window x:Class="Day05TravelList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day05TravelList"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="451.144" Width="800" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="389*" />
+            <ColumnDefinition Width="7*" />
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="lvTrip" HorizontalAlignment="Left" Height="377" Margin="10,10,0,0" VerticalAlignment="Top" Width="429" SelectionChanged="lvTrip_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="60" DisplayMemberBinding="{Binding TravellerName}" />
+                    <GridViewColumn Header="Passport No" Width="90" DisplayMemberBinding="{Binding TravellerPassportNo}" />
+                    <GridViewColumn Header="Destination" Width="90" DisplayMemberBinding="{Binding Destination}" />
+                    <GridViewColumn Header="Departure Date" Width="90" DisplayMemberBinding="{Binding DepartureDate}" />
+                    <GridViewColumn Header="Return Date" Width="90" DisplayMemberBinding="{Binding ReturnDate}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="lblTravellerName" Content="Name" HorizontalAlignment="Left" Margin="461,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-0.538" />
+        <Label x:Name="lblTravellerPassportNo" Content="Passport No." HorizontalAlignment="Left" Margin="461,55,0,0" VerticalAlignment="Top" />
+        <Label x:Name="lblDestination" Content="Destination" HorizontalAlignment="Left" Margin="461,107,0,0" VerticalAlignment="Top" />
+        <Label x:Name="lblDepartureDate" Content="Departure Date" HorizontalAlignment="Left" Margin="461,155,0,0" VerticalAlignment="Top" />
+        <Label x:Name="lblReturnDate" Content="Return Date" HorizontalAlignment="Left" Margin="461,204,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="tbTravellerName" HorizontalAlignment="Left" Height="23" Margin="568,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" RenderTransformOrigin="0.541,-1.851" />
+        <TextBox x:Name="tbTravellerPassportNo" HorizontalAlignment="Left" Height="23" Margin="568,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" RenderTransformOrigin="0.541,-1.851" />
+        <TextBox x:Name="tbDestination" HorizontalAlignment="Left" Height="23" Margin="568,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" RenderTransformOrigin="0.541,-1.851" />
+        <TextBox x:Name="tbDepartureDate" HorizontalAlignment="Left" Height="23" Margin="568,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" RenderTransformOrigin="0.541,-1.851" />
+        <TextBox x:Name="tbReturnDate" HorizontalAlignment="Left" Height="23" Margin="568,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" RenderTransformOrigin="0.541,-1.851" />
+        <Button x:Name="btAdd" Content="Add" HorizontalAlignment="Left" Margin="568,261,0,0" VerticalAlignment="Top" Width="202" Click="btAdd_Click" />
+        <Button x:Name="btUpdate" Content="Update" HorizontalAlignment="Left" Margin="568,314,0,0" VerticalAlignment="Top" Width="202" Click="btUpdate_Click" />
+        <Button x:Name="btDelete" Content="Delete" HorizontalAlignment="Left" Margin="568,367,0,0" VerticalAlignment="Top" Width="202" Click="btDelete_Click" />
+    </Grid>
+</Window>
